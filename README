@@ -1,0 +1,46 @@
+Sorohan Serban 311CC
+
+
+Problema 1:
+	CITIRE GRAF:
+		- Se parcurge fisierul de intrare odata pentru a determina numarul maxim de actori. Acest numar se foloseste la initializarea grafului
+		- Pentru fiecare film, se citesc actorii si se introduc in graf (daca nu se afla deja) atribuindu-i-se fiecaruia cate o pozitie. 
+		- Se tin minte pozitiile actorilor intr-un vector pentru ca dupa terminarea unui film sa se faca conexiunile intre acestia (daca nu exista deja).
+
+
+	CERINTA 1:
+		- Pentru a determina numarul de productii independente se calculeaza numarul de componente conexe din graf.
+
+
+	CERINTA 2:
+		- Se foloseste algoritmul lui Dijkstra (implementat cu heap-uri) pentru a determina gradul de inrudire dintre cei doi actori.
+
+
+	CERINTA 3:
+		- Pentru a determina punctele de articulatie se foloseste algoritmul lui Tarjan. Punctele reprezinta pozitiile actorilor din graf.
+		- Dupa ce se determina punctele, se ordoneaza crescator in functie de numele corespunzatoare din graf.
+
+
+	BONUS:
+		- Se aplica algoritmul de generat clici.
+		- Algoritmul este implementa cu arbori binari de cautare.
+		- Clica maxima este retinuta tot intr-un arbore binar.
+		- Se copiaza clica maxina intr-un vector pentru a se putea ordona alfabetic numele.
+		- Dupa ordonare, se scrie in fisier numar punctelor din clica maxima si numele actorilor, ordonati alfabetic.
+
+		Observatie:
+		- Am incercat la arborele binar in loc de id sa pun numele actorilor. Cu aceasta metoda nu mai este nevoie de un vector pentru a ordona alfabetic numele, deoarece printr-o parcurgere in inordine se obtin numele ordonate.
+		- Singura problema este ca pica testul 7 (nu pot sa imi dau seama de ce). 
+		- Metoda este implementata in penultima submisie de pe vmcheker.
+
+
+
+Problema 2:
+	CITIRE GRAF:
+		- Se formeaza clasic graful, introducandu-se toate muchiile ce prezinta costuri diferite.
+		- Tipul nodului precum si momentele de timp in care exista patrule in nod sunt retinute intr-un vector de liste.
+
+
+	IMPLEMENTARE:
+		- Implementarea se face cu ajutorul algoritmului lui Dijkstra (implementat cu vectori) usor modificat.
+		- Pentru a determina distanta minima intre doua noduri, pe langa costul muchiei se mai adauga si timpul pe care robotelul Wall-e o sa il petreaca in camera respectiva pana pleaca patrula (acesta poate fii si 0).
